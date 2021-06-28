@@ -1,0 +1,7 @@
+<app-navigator></app-navigator>
+<app-product-form-view (setCreateMode)="enableCreateMode()"
+(setUpdateMode)="enableUpdateMode()"
+*ngIf="viewMode"></app-product-form-view>
+<app-product-form-create (setMode)="enableViewMode()" *ngIf="createMode">
+</app-product-form-create>
+<app-product-form-update *ngIf="updateMode"></app-product-form-update>

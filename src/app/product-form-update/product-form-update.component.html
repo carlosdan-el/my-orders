@@ -1,0 +1,91 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <form (ngSubmit)="onSubmit()" class="bg-white p-4 rounded border">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="mb-5">Editar Produto</h1>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <label for="product-name" class="form-label">Nome</label>
+                        <div class="input-group mb-3">
+                            <input
+                                required
+                                id="product-name"
+                                type="text"
+                                class="form-control"
+                                placeholder="e.g.: Peraphone"
+                                aria-label="Nome"
+                                value="{{product.name}}"
+                                (change)="setName($event)"
+                            />
+                        </div>
+                        <label for="product-category" class="form-label">Categorias</label>
+                        <select
+                            required
+                            id="product-category"
+                            class="form-control mb-3"
+                            [value]=product.categoryId
+                            (change)="setCategory($event)"
+                        >
+                            <option value="">Selecionar</option>
+                            <option *ngFor="let category of categories" value={{category.id}}>{{category.name}}</option>
+                        </select>
+                        <label for="product-subcategory" class="form-label">Subcategoria</label>
+                        <select
+                            required
+                            id="product-subcategory"
+                            class="form-control mb-3"
+                            [value]=product.subCategoryId
+                            (change)="setSubCategory($event)"
+                        >
+                            <option value="">Selecionar</option>
+                            <option *ngFor="let subcategory of subCategories" value={{subcategory.id}}>{{subcategory.name}}</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <label for="product-type" class="form-label">Tipo (opcional)</label>
+                        <select
+                            id="product-type"
+                            class="form-control mb-3"
+                            (change)="setType($event)"
+                            [value]=product.typeId
+                        >
+                            <option value="">Selecionar</option>
+                            <option *ngFor="let type of types" value="{{type.id}}">{{type.name}}</option>
+                        </select>
+                        <label for="product-model" class="form-label">Modelo (opcional)</label>
+                        <select
+                            id="product-model"
+                            class="form-control mb-3"
+                            (change)="setModel($event)"
+                            [value]=product.modelId
+                        >
+                            <option value="">Selecionar</option>
+                            <option *ngFor="let model of models" value="{{model.id}}">{{model.name}}</option>
+                        </select>
+                        <label for="product-price" class="form-label">Preço</label>
+                        <div class="input-group mb-3">
+                            <input
+                                required
+                                id="product-price"
+                                type="number"
+                                step="0.1"
+                                class="form-control"
+                                placeholder="e.g.: 10.00"
+                                aria-label="Preço"
+                                value="{{product.price}}"
+                                (change)="setPrice($event)"
+                                />
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12">
+                        <div class="form-actions">
+                            <button class="btn btn-save" href="#" type="submit" role="button">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

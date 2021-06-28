@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+.action-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.btn-new {
+    background-color: #00B894;
+    color: #fff;
+}
+
+.btn-new:hover {
+    background-color: #00a181;
+    color: #fff;
+}
+
+header {
+    background-color: #00B894;
+    color: white;
+}
+
+.form-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.btn-save {
+    background-color: #00B894;
+    color: #fff;
+}
+
+.btn-save:hover {
+    background-color: #00a181;
+}
+
+li {
+    list-style: none;
+}

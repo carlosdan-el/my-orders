@@ -1,0 +1,86 @@
+<app-navigator></app-navigator>
+<div *ngIf="editMode; else viewMode" class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <form class="bg-white p-4 rounded border">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <h1 class="mb-4">Pedido n. {{orderId}}</h1>
+                            <table class="table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Quantidade</th>
+                                        <th scope="col">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">
+                                        </th>
+                                        <td>
+                                            <input value="" type="number" min="1"/>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-link btn-sm">Remover</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12">
+                        <div class="form-actions">
+                            <button class="btn btn-save" href="#" type="submit" role="button">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<ng-template #viewMode>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <form class="bg-white p-4 rounded border">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <h1 class="mb-4">Minha Lista</h1>
+                                <table class="table table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Nome</th>
+                                            <th scope="col">Quantidade</th>
+                                            <th scope="col">Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of products">
+                                            <th scope="row">
+                                                {{item.name}}
+                                            </th>
+                                            <td>
+                                                <input (change)="updateItemQuantity(item, $event)" value="{{item.quantity}}" type="number" min="1"/>
+                                            </td>
+                                            <td>
+                                                <button (click)="removeItemFromList(item.id)" type="button" class="btn btn-link btn-sm">Remover</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12">
+                            <div class="form-actions">
+                                <button class="btn btn-save" href="#" type="submit" role="button">Salvar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</ng-template>
