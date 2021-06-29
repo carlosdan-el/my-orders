@@ -13,7 +13,7 @@ import { ProductCart } from 'src/entities/ProductCart';
 export class OrdersComponent implements OnInit {
 
   public editMode: boolean = false;
-  public products: any;
+  public products: ProductCart[] = [];
   public orderId: string = '';
 
   constructor(private route: ActivatedRoute, private store: Store<{ product: CartModel }>) {}
@@ -34,7 +34,22 @@ export class OrdersComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    
+
+    let data = [];
+
+    this.products.map(item => {
+      data.push({
+        productId: item.id,
+        quantity: item.quantity,
+        price: item.price
+      });  
+    });
+
+    fetch('https://localhost:5001/api/Orders', {
+      method: 'post',
+      body: JSON.stringify(this.products)
+    })
+    .then(response => console.log(this.products));
   }
 
   public updateItemQuantity(product: ProductCart, event: any):void {

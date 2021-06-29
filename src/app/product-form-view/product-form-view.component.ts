@@ -19,27 +19,25 @@ export class ProductFormViewComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private store: Store<{ product: CartModel }>) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     const id = this.route.snapshot.queryParams.id;
 
     if(id) {
       this.enableUpdateMode();
     } else {
-      fetch('https://localhost:5001/api/Products?view=Report')
-      .then(response => response.json())
-      .then(data => {this.products = data;});
+      this.getProducts();
     }
   }
 
-  enableCreateMode(): void {
+  public enableCreateMode(): void {
       this.setCreateMode.emit(true);
   }
 
-  enableUpdateMode(): void {
+  public enableUpdateMode(): void {
     this.setUpdateMode.emit(true);
   }
 
-  addToList(product: ProductReport): void {
+  public addToList(product: ProductReport): void {
     let obj = new ProductCart();
     obj.id = product.id;
     obj.name = product.name;
@@ -47,4 +45,16 @@ export class ProductFormViewComponent implements OnInit {
     this.store.dispatch(add(obj));
   }
 
+  public getProducts(): void {
+    fetch('https://localhost:5001/api/Products?view=Report')
+      .then(response => response.json())
+      .then(data => {this.products = data;});
+  }
+
+  public deleteProduct(id: string): void {
+    fetch(`https://localhost:5001/api/Products/${id}`, {method: 'delete'})
+    .then(response => {
+      this.getProducts();
+    });
+  }
 }

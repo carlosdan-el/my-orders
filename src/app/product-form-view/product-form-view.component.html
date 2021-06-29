@@ -37,7 +37,9 @@
                             <td>{{product.updatedBy}}</td>
                             <td>
                                 <a (click)="enableUpdateMode()" type="button" [routerLink]="['/products']" [queryParams]="{ id: product.id}" class="btn btn-link btn-sm">Editar</a>
-                                <button type="button" class="btn btn-link btn-sm ml-3">Excluir</button>
+                                <button (click)="deleteProduct(product.id)" type="button" class="btn btn-link btn-sm ml-3">
+                                    Excluir
+                                </button>
                                 <button (click)="addToList(product)" type="button" class="btn btn-link btn-sm ml-3">
                                     Adicionar a lista
                                 </button>
