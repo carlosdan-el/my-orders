@@ -7,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  public columnsName: Array<string> = [];
   public orders: any = [];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+    this.columnsName = ['ID', 'Cliente', 'Endereço', 'Prazo', 'Status', 'Ações'];
     this.orders.push({
       id: 1,
       createdAt: '2021-06-25 00:00:00',

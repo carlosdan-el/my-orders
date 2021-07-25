@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { CartModel } from '../../entities/CartModel';
+import { CartModel } from '../../../entities/CartModel';
 
 @Component({
   selector: 'app-navigator',

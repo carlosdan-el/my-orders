@@ -1,0 +1,24 @@
+<app-navigator></app-navigator>
+<div class="container mt-5">
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="action-container">
+                <a class="btn btn-new" routerLink="/products" role="button">Novo pedido</a>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-xd-12">
+            <h3>Novos pedidos</h3>
+            <app-table-orders [columnsName]="columnsName"></app-table-orders>
+        </div>
+        <div class="col-xd-12">
+            <h3>Em andamento</h3>
+            <app-table-orders [columnsName]="columnsName"></app-table-orders>
+        </div>
+        <div class="col-xd-12">
+            <h3>Finalizados</h3>
+            <app-table-orders [columnsName]="columnsName"></app-table-orders>
+        </div>
+    </div>
+</div>

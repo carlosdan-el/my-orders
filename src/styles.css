@@ -5,18 +5,21 @@
 }
 
 .btn-new {
-    background-color: #00B894;
+    background-color: #74B9FF;
     color: #fff;
 }
 
 .btn-new:hover {
-    background-color: #00a181;
+    background-color: #59acff;
     color: #fff;
 }
 
 header {
-    background-color: #00B894;
-    color: white;
+    background-color: #74B9FF;
+}
+
+.nav-link, .navbar-brand {
+    color: #fff !important;
 }
 
 .form-actions {
@@ -26,12 +29,12 @@ header {
 }
 
 .btn-save {
-    background-color: #00B894;
+    background-color: #74B9FF;
     color: #fff;
 }
 
 .btn-save:hover {
-    background-color: #00a181;
+    background-color: #59acff;
 }
 
 li {
