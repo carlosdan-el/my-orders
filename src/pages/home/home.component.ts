@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.columnsName = ['ID', 'Cliente', 'Endereço', 'Prazo', 'Status', 'Ações'];
+    this.columnsName = ['ID', 'Customer', 'Address', 'Time', 'Status', 'Actions'];
     this.orders.push({
       id: 1,
       createdAt: '2021-06-25 00:00:00',

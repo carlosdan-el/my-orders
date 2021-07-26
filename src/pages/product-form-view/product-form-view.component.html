@@ -2,23 +2,24 @@
     <div class="row mb-4">
         <div class="col-12">
             <div class="action-container">
-                <a class="btn btn-new" routerLink="/products" (click)="enableCreateMode()" role="button">Novo produto</a>
+                <a class="btn btn-new" routerLink="/products" (click)="enableCreateMode()" role="button">NEW PRODUCT</a>
             </div>
         </div>
     </div>
     <div class="row mb-4">
         <div class="col-sm-6">
-            <label for="search-input"></label>
             <div class="input-group mt-2 mb-3">
                 <input type="text" placeholder="Search" class="form-control text-center" id="search-input" aria-describedby="basic-addon1">
             </div>
         </div>
-        <div class="col-sm-2">
-            <label for="search-input">Category</label>
+        <div class="col-sm-3 col-md-3 col-lg-2">
             <select class="form-control mt-2 mb-3">
-                <option selected>All</option>
-                <option>Bolo</option>
-                <option>Pizza</option>
+                <option selected>Categories</option>
+                <option>All</option>
+                <option>Drinks</option>
+                <option>Snacks</option>
+                <option>Desserts</option>
+                <option>Meals</option>
             </select>
         </div>
     </div>
